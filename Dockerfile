@@ -1,9 +1,9 @@
-FROM alpine:3.9
-LABEL maintainer="ITBM"
+FROM alpine:3.11
+LABEL maintainer="teamon"
 
 RUN apk update \
 	&& apk add coreutils \
-	&& apk add postgresql-client \
+	&& apk add postgresql-client=12.1-r0 \
 	&& apk add python py2-pip && pip install awscli && apk del py2-pip \
 	&& apk add openssl \
 	&& apk add curl \
